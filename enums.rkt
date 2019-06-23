@@ -24,6 +24,7 @@
 (define _KeyboardKey
   (_enum
 	'(
+    KEY_NONE            = 4294967295
     ; Alphanumeric keys
     KEY_APOSTROPHE      = 39
     KEY_COMMA           = 44

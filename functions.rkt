@@ -194,19 +194,19 @@
 	
 ;bool IsKeyPressed(int key);
 ;// Detect if a key has been pressed once
-(drl IsKeyPressed (_fun _int -> _bool))
+(drl IsKeyPressed (_fun _KeyboardKey -> _bool))
 
 ;bool IsKeyDown(int key);
 ;// Detect if a key is being pressed
-(drl IsKeyDown (_fun _int -> _bool))
+(drl IsKeyDown (_fun _KeyboardKey -> _bool))
 
 ;bool IsKeyReleased(int key);
 ;// Detect if a key has been released once
-(drl IsKeyReleased (_fun _int -> _bool))
+(drl IsKeyReleased (_fun _KeyboardKey -> _bool))
 
 ;bool IsKeyUp(int key);
 ;// Detect if a key is NOT being pressed
-(drl IsKeyUp (_fun _int -> _bool))
+(drl IsKeyUp (_fun _KeyboardKey -> _bool))
 
 ;int GetKeyPressed(void);
 ;// Get latest key pressed
@@ -214,7 +214,7 @@
 
 ;void SetExitKey(int key);
 ;// Set a custom key to exit program (default is ESC)
-(drl SetExitKey (_fun _int -> _void))
+(drl SetExitKey (_fun _KeyboardKey -> _void))
 
 ;Input-related functions: gamepads                
 
@@ -262,19 +262,19 @@
 	
 ;bool IsMouseButtonPressed(int button);
 ;// Detect if a mouse button has been pressed once
-(drl IsMouseButtonPressed (_fun _int -> _bool))
+(drl IsMouseButtonPressed (_fun _MouseButton -> _bool))
 
 ;bool IsMouseButtonDown(int button);
 ;// Detect if a mouse button is being pressed
-(drl IsMouseButtonDown (_fun _int -> _bool))
+(drl IsMouseButtonDown (_fun _MouseButton -> _bool))
 
 ;bool IsMouseButtonReleased(int button);
 ;// Detect if a mouse button has been released once
-(drl IsMouseButtonReleased (_fun _int -> _bool))
+(drl IsMouseButtonReleased (_fun _MouseButton -> _bool))
 
 ;bool IsMouseButtonUp(int button);
 ;// Detect if a mouse button is NOT being pressed
-(drl IsMouseButtonUp (_fun _int -> _bool))
+(drl IsMouseButtonUp (_fun _MouseButton -> _bool))
 
 ;int GetMouseX(void);
 ;// Returns mouse position X
@@ -428,8 +428,10 @@
 ;// Draw a regular polygon (Vector version)
 (drl DrawPoly (_fun _Vector2 _int _float _float _Color -> _void))
 
+;void DrawTriangleFan(Vector2 *points, int numPoints, Color color);                                 
+;// Draw a triangle fan defined by points
 (drl DrawTriangleFan
-	 (_fun (points : [_list i _Vector2]) (len : _int = (length points)) -> _void))
+	 (_fun (points : [_list i _Vector2]) (len : _int = (length points)) _Color -> _void))
 
 ;void SetShapesTexture(Texture2D texture, Rectangle source);
 ;// Define default texture used to draw shapes
