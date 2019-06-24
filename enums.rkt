@@ -20,6 +20,20 @@
     FLAG_VSYNC_HINT         = 64    ; Set to try enabling V-Sync on GPU
 	)))
 
+; Trace log type
+(define _TraceLogType
+  (_enum
+	'(
+	   LOG_ALL = 0        
+	   LOG_TRACE
+	   LOG_DEBUG
+	   LOG_INFO
+	   LOG_WARNING
+	   LOG_ERROR
+	   LOG_FATAL
+	   LOG_NONE
+	  )))
+
 ; Keyboard keys
 (define _KeyboardKey
   (_enum

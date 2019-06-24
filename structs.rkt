@@ -1,7 +1,8 @@
 #lang racket/base
 
 
-(require ffi/unsafe)
+(require ffi/unsafe
+		 "enums.rkt")
 
 (provide (all-defined-out))
 
@@ -172,7 +173,7 @@ typedef struct NPatchInfo {
 							 [top _int]
 							 [right _int]
 							 [bottm _int]
-							 [type _int]))
+							 [type _NPatchType]))
 
 #;(
 // Font character info

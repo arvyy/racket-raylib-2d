@@ -185,6 +185,15 @@
 ;// Returns elapsed time in seconds since InitWindow()
 (drl GetTime (_fun -> _double))
 
+;misc
+
+;void SetConfigFlags(unsigned int flags);
+;// Setup window configuration flags (view FLAGS)
+(drl SetConfigFlags (_fun _ConfigFlag -> _void))
+
+;void SetTraceLogLevel(int logType);
+;// Set the current threshold (minimum) log level
+(drl SetTraceLogLevel (_fun _TraceLogType -> _void))
 
 ;//------------------------------------------------------------------------------------
 ;// Input Handling Functions
@@ -685,11 +694,11 @@
 
 ;void SetTextureFilter(Texture2D texture, int filterMode);
 ;// Set texture scaling filter mode
-(drl SetTextureFilter (_fun _Texture2D _int -> _void))
+(drl SetTextureFilter (_fun _Texture2D _TextureFilterMode -> _void))
 
 ;void SetTextureWrap(Texture2D texture, int wrapMode);
 ;// Set texture wrapping mode
-(drl SetTextureWrap (_fun _Texture2D _int -> _void))
+(drl SetTextureWrap (_fun _Texture2D _TextureWrapMode -> _void))
 
 ;Texture2D drawing functions                                                                      
 	

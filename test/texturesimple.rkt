@@ -8,16 +8,15 @@
 		 ffi/unsafe)
 
 
-(InitWindow 800 600 "Texture test")
+(InitWindow 600 480 "Image/texture test")
 (SetTargetFPS 30)
 
 (define resources-path (build-path (pkg-directory "raylib-racket-2d") "test/resources/"))
 (define brickimg (LoadImage (~a resources-path "tileablebrick.png")))
-(define brictexture (LoadTextureFromImage brickimg))
 
-(raylib-basic-loop
-  
-  )
+(define img (ImageCopy brickimg))
+(define bricktexture (LoadTextureFromImage (ImageCopy img)))
+(UnloadImage img)
 
-(UnloadImage brickimg)
 (UnloadTexture bricktexture)
+(UnloadImage brickimg)
