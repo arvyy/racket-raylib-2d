@@ -8,7 +8,7 @@
 
 (InitWindow 512 512 "Shader test")
 
-(define resources-path (build-path (pkg-directory "raylib-2d") "test/resources/"))
+(define resources-path (build-path (pkg-directory "racket-raylib-2d") "test/resources/"))
 (define shader (LoadShader (~a resources-path "basic.vs")
 						   (~a resources-path "basic.fs")))
 
