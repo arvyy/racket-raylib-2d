@@ -21,7 +21,6 @@
   `(
 	("Normal" . ,(ImageCopy brickimg))
 
-  #;(
 	("Alpha masked" . ,(let ([img (ImageCopy brickimg)])
 						 (ImageAlphaMask img alphaimg)
 						 img))
@@ -92,8 +91,6 @@
 	("White noise" . ,(GenImageWhiteNoise 1024 1024 0.5))
 	("Perlin noise" . ,(GenImagePerlinNoise 1024 1024 50 50 0.5))
 	("Cellular" . ,(GenImageCellular 1024 1024 100))
-
-	)
 	))
 
 (define textures 
