@@ -11,7 +11,7 @@
 (InitWindow 800 600 "Image test")
 (SetTargetFPS 30)
 
-(define resources-path (build-path (pkg-directory "raylib-2d") "test/resources/"))
+(define resources-path (build-path (pkg-directory "racket-raylib-2d") "test/resources/"))
 (define brickimg (LoadImage (~a resources-path "tileablebrick.png")))
 
 (define alphaimg (LoadImage (~a resources-path "alphamask.png")))
