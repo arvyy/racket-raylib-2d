@@ -11,7 +11,7 @@
 (InitWindow 800 600 "Texture test")
 (SetTargetFPS 30)
 
-(define resources-path (build-path (pkg-directory "raylib-2d") "test/resources/"))
+(define resources-path (build-path (pkg-directory "racket-raylib-2d") "test/resources/"))
 (define brickimage (let ([im (LoadImage (~a resources-path "tileablebrick.png"))])
 	  (ImageCrop im (make-Rectangle 0.0 0.0 512.0 512.0))
 	  (ImageResize im 64 64)
