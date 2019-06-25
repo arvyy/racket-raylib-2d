@@ -1,4 +1,4 @@
-raylib-racket-2d
+raylib-2d
 ================
 Racket bindings for 2D graphics functionality part of Raylib library v2.5 (https://github.com/raysan5/raylib).
 The wrapper has test coverage for what was in my opinion most important functions. Currently only fonts aren't tested.
