@@ -11,14 +11,17 @@
 (InitWindow 800 600 "Image test")
 (SetTargetFPS 30)
 
-(define resources-path (build-path (pkg-directory "raylib-racket-2d") "test/resources/"))
+(define resources-path (build-path (pkg-directory "raylib-2d") "test/resources/"))
 (define brickimg (LoadImage (~a resources-path "tileablebrick.png")))
 
 (define alphaimg (LoadImage (~a resources-path "alphamask.png")))
 (ImageResize alphaimg 1024 1024)
 
 (define images
-  `(("Normal" . ,(ImageCopy brickimg))
+  `(
+	("Normal" . ,(ImageCopy brickimg))
+
+  #;(
 	("Alpha masked" . ,(let ([img (ImageCopy brickimg)])
 						 (ImageAlphaMask img alphaimg)
 						 img))
@@ -89,7 +92,8 @@
 	("White noise" . ,(GenImageWhiteNoise 1024 1024 0.5))
 	("Perlin noise" . ,(GenImagePerlinNoise 1024 1024 50 50 0.5))
 	("Cellular" . ,(GenImageCellular 1024 1024 100))
-	
+
+	)
 	))
 
 (define textures 
@@ -120,9 +124,5 @@
 						  10
 						  WHITE))
 			  textures)))
-
-(for-each (lambda(e)
-			(displayln (Texture2D-id (cdr e)))
-			(UnloadTexture (cdr e))) textures)
 
 (UnloadImage brickimg)

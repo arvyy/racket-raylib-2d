@@ -841,11 +841,11 @@
 
 ;void SetShaderValue(Shader shader, int uniformLoc, const void *value, int uniformType);
 ;// Set shader uniform value
-(drl SetShaderValue (_fun _Shader _int _pointer _int -> _void))
+(drl SetShaderValue (_fun _Shader _int _pointer _ShaderUniformDataType  -> _void))
 
 ;void SetShaderValueV(Shader shader, int uniformLoc, const void *value, int uniformType, int count);
 ;// Set shader uniform value vector
-(drl SetShaderValueV (_fun _Shader _int _pointer _int _int -> _void ))
+(drl SetShaderValueV (_fun _Shader _int _pointer _ShaderUniformDataType _int -> _void ))
 
 ;void SetShaderValueMatrix(Shader shader, int uniformLoc, Matrix mat);
 ;// Set shader uniform value (matrix 4x4)

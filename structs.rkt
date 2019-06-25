@@ -129,7 +129,7 @@ typedef struct Texture2D {
 							[width _int]
 							[height _int]
 							[mipmaps _int]
-							[format _int]))
+							[format _PixelFormat]))
 
 #;(
 // Texture type, same as Texture2D
