@@ -1,21 +1,20 @@
 #lang racket
 
 (require raylib-2d
-		 raylib-2d/util
-		 raylib-2d/colors
-		 pkg/lib
-		 racket/generator
-		 ffi/unsafe)
+         raylib-2d/util
+         raylib-2d/colors
+         pkg/lib
+         racket/generator
+         ffi/unsafe)
 
 
 (InitWindow 800 600 "Texture test")
 (SetTargetFPS 30)
 
-(define resources-path (build-path (pkg-directory "racket-raylib-2d") "test/resources/"))
-(define brickimage (let ([im (LoadImage (~a resources-path "tileablebrick.png"))])
-	  (ImageCrop im (make-Rectangle 0.0 0.0 512.0 512.0))
-	  (ImageResize im 64 64)
-	  im))
+(define brickimage (let ([im (LoadImage (collection-file-path "test/resources/tileablebrick.png" "raylib-2d"))])
+      (ImageCrop im (make-Rectangle 0.0 0.0 512.0 512.0))
+      (ImageResize im 64 64)
+      im))
 
 (define gridimage (GenImageChecked 60 60 5 5 BLUE GRAY))
 
@@ -39,43 +38,43 @@
 
 (raylib-basic-loop
   (begin-drawing
-	(DrawTexture t1 0 0 WHITE))
-  	(DrawTextureV t1 (make-Vector2 64.0 0.0) WHITE)
-	(DrawTextureEx t1 (make-Vector2 128.0 0.0) 45.0 0.5 WHITE)
-	(DrawTextureRec t1 (make-Rectangle 0.0 0.0 64.0 64.0) (make-Vector2 128.0 0.0) WHITE)
-	(DrawTextureQuad t1 (make-Vector2 4.0 1.0) (make-Vector2 0.5 0.5) (make-Rectangle 0.0 64.0 512.0 64.0) WHITE)
-	(DrawTexturePro t1 
-					(make-Rectangle 0.0 0.0 64.0 64.0) 
-					(make-Rectangle 0.0 128.0 512.0 64.0)
-					(make-Vector2 0.0 0.0)
-					0.0
-					WHITE)
+    (DrawTexture t1 0 0 WHITE))
+    (DrawTextureV t1 (make-Vector2 64.0 0.0) WHITE)
+    (DrawTextureEx t1 (make-Vector2 128.0 0.0) 45.0 0.5 WHITE)
+    (DrawTextureRec t1 (make-Rectangle 0.0 0.0 64.0 64.0) (make-Vector2 128.0 0.0) WHITE)
+    (DrawTextureQuad t1 (make-Vector2 4.0 1.0) (make-Vector2 0.5 0.5) (make-Rectangle 0.0 64.0 512.0 64.0) WHITE)
+    (DrawTexturePro t1 
+                    (make-Rectangle 0.0 0.0 64.0 64.0) 
+                    (make-Rectangle 0.0 128.0 512.0 64.0)
+                    (make-Vector2 0.0 0.0)
+                    0.0
+                    WHITE)
 
-	(DrawTextureRec t1 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 0.0 192.0) WHITE)
-	(DrawTextureRec t2 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 128.0 192.0) WHITE)
-	(DrawTextureRec t3 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 256.0 192.0) WHITE)
-	(DrawTextureRec t4 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 384.0 192.0) WHITE)
+    (DrawTextureRec t1 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 0.0 192.0) WHITE)
+    (DrawTextureRec t2 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 128.0 192.0) WHITE)
+    (DrawTextureRec t3 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 256.0 192.0) WHITE)
+    (DrawTextureRec t4 (make-Rectangle -32.0 -32.0 128.0 128.0) (make-Vector2 384.0 192.0) WHITE)
 
-	(DrawTexturePro t5 
-					(make-Rectangle 0.0 0.0 60.0 60.0)
-					(make-Rectangle 64.0 320.0 128.0 128.0)
-					(make-Vector2 0.0 0.0)
-					45.0
-					WHITE)
+    (DrawTexturePro t5 
+                    (make-Rectangle 0.0 0.0 60.0 60.0)
+                    (make-Rectangle 64.0 320.0 128.0 128.0)
+                    (make-Vector2 0.0 0.0)
+                    45.0
+                    WHITE)
 
-	(DrawTexturePro t6
-					(make-Rectangle 0.0 0.0 60.0 60.0)
-					(make-Rectangle 256.0 320.0 128.0 128.0)
-					(make-Vector2 0.0 0.0)
-					45.0
-					WHITE)
+    (DrawTexturePro t6
+                    (make-Rectangle 0.0 0.0 60.0 60.0)
+                    (make-Rectangle 256.0 320.0 128.0 128.0)
+                    (make-Vector2 0.0 0.0)
+                    45.0
+                    WHITE)
 
-	(DrawTextureNPatch t5
-					   (make-NPatchInfo (make-Rectangle 0.0 0.0 60.0 60.0)
-										10 10 10 10
-										'NPT_9PATCH)
-					   (make-Rectangle 512.0 320.0 256.0 256.0)
-					   (make-Vector2 0.0 0.0)
-					   0.0
-					   WHITE)
+    (DrawTextureNPatch t5
+                       (make-NPatchInfo (make-Rectangle 0.0 0.0 60.0 60.0)
+                                        10 10 10 10
+                                        'NPT_9PATCH)
+                       (make-Rectangle 512.0 320.0 256.0 256.0)
+                       (make-Vector2 0.0 0.0)
+                       0.0
+                       WHITE)
   )

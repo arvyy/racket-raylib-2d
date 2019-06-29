@@ -2,7 +2,7 @@
 
 
 (require ffi/unsafe
-		 "enums.rkt")
+         "enums.rkt")
 
 (provide (all-defined-out))
 
@@ -14,7 +14,7 @@ typedef struct Vector2 {
 } Vector2;
 )
 (define-cstruct _Vector2 ([x _float]
-						  [y _float]))
+                          [y _float]))
 
 #;(
 // Vector3 type
@@ -25,8 +25,8 @@ typedef struct Vector3 {
 } Vector3;
 )
 (define-cstruct _Vector3 ([x _float]
-						  [y _float]
-						  [z _float]))
+                          [y _float]
+                          [z _float]))
 
 #;(
 // Vector4 type
@@ -38,9 +38,9 @@ typedef struct Vector4 {
 } Vector4;
 )
 (define-cstruct _Vector4 ([x _float]
-						  [y _float]
-						  [z _float]
-						  [w _float]))
+                          [y _float]
+                          [z _float]
+                          [w _float]))
 
 
 #;(
@@ -53,21 +53,21 @@ typedef struct Matrix {
 } Matrix;
 )
 (define-cstruct _Matrix ([m0 _float]
-						 [m1 _float]
-						 [m2 _float]
-						 [m3 _float]
-						 [m4 _float]
-						 [m5 _float]
-						 [m6 _float]
-						 [m7 _float]
-						 [m8 _float]
-						 [m9 _float]
-						 [m10 _float]
-						 [m11 _float]
-						 [m12 _float]
-						 [m13 _float]
-						 [m14 _float]
-						 [m15 _float]))
+                         [m1 _float]
+                         [m2 _float]
+                         [m3 _float]
+                         [m4 _float]
+                         [m5 _float]
+                         [m6 _float]
+                         [m7 _float]
+                         [m8 _float]
+                         [m9 _float]
+                         [m10 _float]
+                         [m11 _float]
+                         [m12 _float]
+                         [m13 _float]
+                         [m14 _float]
+                         [m15 _float]))
 
 #;(
 // Color type, RGBA (32bit)
@@ -79,9 +79,9 @@ typedef struct Color {
 } Color;
 )
 (define-cstruct _Color ([r _ubyte]
-						[g _ubyte]
-						[b _ubyte]
-						[a _ubyte]))
+                        [g _ubyte]
+                        [b _ubyte]
+                        [a _ubyte]))
 
 #;(
 // Rectangle type
@@ -93,9 +93,9 @@ typedef struct Rectangle {
 } Rectangle;
 )
 (define-cstruct _Rectangle ([x _float]
-							[y _float]
-							[width _float]
-							[height _float]))
+                            [y _float]
+                            [width _float]
+                            [height _float]))
 
 #;(
 // Image type, bpp always RGBA (32bit)
@@ -109,10 +109,10 @@ typedef struct Image {
 } Image;
 )
 (define-cstruct _Image ([data _pointer]
-						[width _int]
-						[height _int]
-						[mipmaps _int]
-						[format _int]))
+                        [width _int]
+                        [height _int]
+                        [mipmaps _int]
+                        [format _int]))
 
 #;(
 // Texture2D type
@@ -126,10 +126,10 @@ typedef struct Texture2D {
 } Texture2D;
 )
 (define-cstruct _Texture2D ([id _uint]
-							[width _int]
-							[height _int]
-							[mipmaps _int]
-							[format _PixelFormat]))
+                            [width _int]
+                            [height _int]
+                            [mipmaps _int]
+                            [format _PixelFormat]))
 
 #;(
 // Texture type, same as Texture2D
@@ -147,9 +147,9 @@ typedef struct RenderTexture2D {
 } RenderTexture2D;
 )
 (define-cstruct _RenderTexture2D ([id _uint]
-								  [texture _Texture2D]
-								  [depth _Texture2D]
-								  [depthTexture _bool]))
+                                  [texture _Texture2D]
+                                  [depth _Texture2D]
+                                  [depthTexture _bool]))
 
 #;(
 // RenderTexture type, same as RenderTexture2D
@@ -169,11 +169,11 @@ typedef struct NPatchInfo {
 } NPatchInfo;
 )
 (define-cstruct _NPatchInfo ([sourceRec _Rectangle]
-							 [left _int]
-							 [top _int]
-							 [right _int]
-							 [bottm _int]
-							 [type _NPatchType]))
+                             [left _int]
+                             [top _int]
+                             [right _int]
+                             [bottm _int]
+                             [type _NPatchType]))
 
 #;(
 // Font character info
@@ -187,11 +187,11 @@ typedef struct CharInfo {
 } CharInfo;
 )
 (define-cstruct _CharInfo ([value _int]
-						   [rec _Rectangle]
-						   [offsetX _int]
-						   [offsetY _int]
-						   [advanceX _int]
-						   [data _pointer]))
+                           [rec _Rectangle]
+                           [offsetX _int]
+                           [offsetY _int]
+                           [advanceX _int]
+                           [data _pointer]))
 
 #;(
 // Font type, includes texture and charSet array data
@@ -203,9 +203,9 @@ typedef struct Font {
 } Font;
 )
 (define-cstruct _Font ([texture _Texture2D]
-					   [baseSize _int]
-					   [charsCount _int]
-					   [chars _CharInfo-pointer]))
+                       [baseSize _int]
+                       [charsCount _int]
+                       [chars _CharInfo-pointer]))
 
 #;(
 ;#define SpriteFont Font     // SpriteFont type fallback, defaults to Font
@@ -222,9 +222,9 @@ typedef struct Camera2D {
 } Camera2D;
 )
 (define-cstruct _Camera2D ([offset _Vector2]
-						   [target _Vector2]
-						   [rotation _float]
-						   [zoom _float]))
+                           [target _Vector2]
+                           [rotation _float]
+                           [zoom _float]))
 
 #;(
 // Shader type (generic)
@@ -235,5 +235,5 @@ typedef struct Shader {
 )
 (define MAX_SHADER_LOCATIONS 32)
 (define-cstruct _Shader ([id _uint]
-						 [locs (_array _int MAX_SHADER_LOCATIONS)]))
+                         [locs (_array _int MAX_SHADER_LOCATIONS)]))
 

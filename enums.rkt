@@ -18,26 +18,26 @@
     FLAG_WINDOW_HIDDEN      = 128  ; Set to create the window initially hidden
     FLAG_MSAA_4X_HINT       = 32   ; Set to try enabling MSAA 4X
     FLAG_VSYNC_HINT         = 64    ; Set to try enabling V-Sync on GPU
-	)))
+    )))
 
 ; Trace log type
 (define _TraceLogType
   (_enum
-	'(
-	   LOG_ALL = 0        
-	   LOG_TRACE
-	   LOG_DEBUG
-	   LOG_INFO
-	   LOG_WARNING
-	   LOG_ERROR
-	   LOG_FATAL
-	   LOG_NONE
-	  )))
+    '(
+       LOG_ALL = 0        
+       LOG_TRACE
+       LOG_DEBUG
+       LOG_INFO
+       LOG_WARNING
+       LOG_ERROR
+       LOG_FATAL
+       LOG_NONE
+      )))
 
 ; Keyboard keys
 (define _KeyboardKey
   (_enum
-	'(
+    '(
     KEY_NONE            = 4294967295
     ; Alphanumeric keys
     KEY_APOSTROPHE      = 39
@@ -154,7 +154,7 @@
 ; Mouse buttons
 (define _MouseButton
   (_enum
-	'(
+    '(
     MOUSE_LEFT_BUTTON   = 0
     MOUSE_RIGHT_BUTTON  = 1
     MOUSE_MIDDLE_BUTTON = 2
@@ -163,17 +163,17 @@
 ; Gamepad number
 (define _GamepadNumber
   (_enum
-	'(
+    '(
     GAMEPAD_PLAYER1     = 0
     GAMEPAD_PLAYER2     = 1
     GAMEPAD_PLAYER3     = 2
     GAMEPAD_PLAYER4     = 3
-	)))
+    )))
 
 ; Gamepad Buttons
 (define _GamepadButton
   (_enum
-	'(
+    '(
     ; This is here just for error checking
     GAMEPAD_BUTTON_UNKNOWN = 0
 
@@ -204,11 +204,11 @@
     ; These are the joystick press in buttons
     GAMEPAD_BUTTON_LEFT_THUMB
     GAMEPAD_BUTTON_RIGHT_THUMB
-	)))
+    )))
 
 (define _GamepadAxis
   (_enum
-	'(
+    '(
     ; This is here just for error checking
     GAMEPAD_AXIS_UNKNOWN = 0
 
@@ -223,12 +223,12 @@
     ; Pressure levels for the back triggers
     GAMEPAD_AXIS_LEFT_TRIGGER      ; [1..-1] (pressure-level)
     GAMEPAD_AXIS_RIGHT_TRIGGER      ; [1..-1] (pressure-level)
-	)))
+    )))
 
 ; Shader location point type
 (define _ShaderLocationIndex
   (_enum
-	'(
+    '(
     LOC_VERTEX_POSITION = 0
     LOC_VERTEX_TEXCOORD01
     LOC_VERTEX_TEXCOORD02
@@ -254,12 +254,12 @@
     LOC_MAP_IRRADIANCE
     LOC_MAP_PREFILTER
     LOC_MAP_BRDF
-	)))
+    )))
 
 ; Shader uniform data types
 (define _ShaderUniformDataType
   (_enum
-	'(
+    '(
     UNIFORM_FLOAT = 0
     UNIFORM_VEC2
     UNIFORM_VEC3
@@ -269,13 +269,13 @@
     UNIFORM_IVEC3
     UNIFORM_IVEC4
     UNIFORM_SAMPLER2D
-	)))
+    )))
 
 ; Pixel formats
 ; NOTE: Support depends on OpenGL version and platform
 (define _PixelFormat
   (_enum
-	'(
+    '(
     UNCOMPRESSED_GRAYSCALE = 1     ; 8 bit per pixel (no alpha)
     UNCOMPRESSED_GRAY_ALPHA        ; 8*2 bpp (2 channels)
     UNCOMPRESSED_R5G6B5            ; 16 bpp
@@ -297,56 +297,56 @@
     COMPRESSED_PVRT_RGBA           ; 4 bpp
     COMPRESSED_ASTC_4x4_RGBA       ; 8 bpp
     COMPRESSED_ASTC_8x8_RGBA        ; 2 bpp
-	)))
+    )))
 
 ; Texture parameters: filter mode
 ; NOTE 1: Filtering considers mipmaps if available in the texture
 ; NOTE 2: Filter is accordingly set for minification and magnification
 (define _TextureFilterMode
   (_enum
-	'(
+    '(
     FILTER_POINT = 0               ; No filter just pixel aproximation
     FILTER_BILINEAR                ; Linear filtering
     FILTER_TRILINEAR               ; Trilinear filtering (linear with mipmaps)
     FILTER_ANISOTROPIC_4X          ; Anisotropic filtering 4x
     FILTER_ANISOTROPIC_8X          ; Anisotropic filtering 8x
     FILTER_ANISOTROPIC_16X         ; Anisotropic filtering 16x
-	)))
+    )))
 
 ; Texture parameters: wrap mode
 (define _TextureWrapMode
   (_enum
-	'(
+    '(
     WRAP_REPEAT = 0        ; Repeats texture in tiled mode
     WRAP_CLAMP             ; Clamps texture to edge pixel in tiled mode
     WRAP_MIRROR_REPEAT     ; Mirrors and repeats the texture in tiled mode
     WRAP_MIRROR_CLAMP       ; Mirrors and clamps to border the texture in tiled mode
-	)))
+    )))
 
 ; Font type defines generation method
 (define _FontType
   (_enum
-	'(
+    '(
     FONT_DEFAULT = 0       ; Default font generation anti-aliased
     FONT_BITMAP            ; Bitmap font generation no anti-aliasing
     FONT_SDF                ; SDF font generation requires external shader
-	)))
+    )))
 
 ; Color blending modes (pre-defined)
 (define _BlendMode
   (_enum
-	'(
+    '(
     BLEND_ALPHA = 0        ; Blend textures considering alpha (default)
     BLEND_ADDITIVE         ; Blend textures adding colors
     BLEND_MULTIPLIED        ; Blend textures multiplying colors
-	)))
+    )))
 
 ; Type of n-patch
 (define _NPatchType
   (_enum
-	'(
+    '(
     NPT_9PATCH = 0         ; Npatch defined by 3x3 tiles
     NPT_3PATCH_VERTICAL    ; Npatch defined by 1x3 tiles
     NPT_3PATCH_HORIZONTAL   ; Npatch defined by 3x1 tiles
-	)))
+    )))
 

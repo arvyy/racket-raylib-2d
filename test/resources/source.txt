@@ -1,3 +1,4 @@
 tileable brick texture: https://opengameart.org/content/tileable-brick-ground-textures-set-2-previewpng
-the awful alpha mask image is made by yours truly. CC0, use it if you wish to
+bebas neue font: https://fontlibrary.org/en/font/bebasneueregular
+awful alpha mask image is made by yours truly
 shaders used raylib's base shaders from https://github.com/raysan5/raylib/tree/master/examples/shaders/resources/shaders/glsl330

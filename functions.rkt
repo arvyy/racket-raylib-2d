@@ -1,9 +1,9 @@
 #lang racket/base
 
 (require ffi/unsafe
-		 ffi/unsafe/define
-		 "structs.rkt"
-		 "enums.rkt")
+         ffi/unsafe/define
+         "structs.rkt"
+         "enums.rkt")
 
 (define-ffi-definer drl (ffi-lib "libraylib"))
 
@@ -200,7 +200,7 @@
 ;//------------------------------------------------------------------------------------
 
 ;// Input-related functions: keyb
-	
+    
 ;bool IsKeyPressed(int key);
 ;// Detect if a key has been pressed once
 (drl IsKeyPressed (_fun _KeyboardKey -> _bool))
@@ -268,7 +268,7 @@
 (drl GetGamepadAxisMovement (_fun _int _int -> _float))
 
 ;Input-related functions: mouse               
-	
+    
 ;bool IsMouseButtonPressed(int button);
 ;// Detect if a mouse button has been pressed once
 (drl IsMouseButtonPressed (_fun _MouseButton -> _bool))
@@ -347,7 +347,7 @@
 ;void DrawLineStrip(Vector2 *points, int numPoints, Color color);         
 ;// Draw lines sequence
 (drl DrawLineStrip
-	 (_fun (points : [_list i _Vector2]) (len : _int = (length points)) _Color -> _void))
+     (_fun (points : [_list i _Vector2]) (len : _int = (length points)) _Color -> _void))
 
 ;void DrawCircle(int centerX, int centerY, float radius, Color color);
 ;// Draw a color-filled circle
@@ -440,7 +440,7 @@
 ;void DrawTriangleFan(Vector2 *points, int numPoints, Color color);                                 
 ;// Draw a triangle fan defined by points
 (drl DrawTriangleFan
-	 (_fun (points : [_list i _Vector2]) (len : _int = (length points)) _Color -> _void))
+     (_fun (points : [_list i _Vector2]) (len : _int = (length points)) _Color -> _void))
 
 ;void SetShapesTexture(Texture2D texture, Rectangle source);
 ;// Define default texture used to draw shapes
@@ -581,7 +581,7 @@
 ;Color *ImageExtractPalette(Image image, int maxPaletteSize, int *extractCount);
 ;// Extract color palette from image to maximum size (memory should be freed)
 (drl ImageExtractPalette 
-	 (_fun _Image _int (_ptr o _int) -> (_ptr o _Color)))
+     (_fun _Image _int (_ptr o _int) -> (_ptr o _Color)))
 
 ;Image ImageText(const char *text, int fontSize, Color color);
 ;// Create an image from text (default font)
@@ -701,7 +701,7 @@
 (drl SetTextureWrap (_fun _Texture2D _TextureWrapMode -> _void))
 
 ;Texture2D drawing functions                                                                      
-	
+    
 ;void DrawTexture(Texture2D texture, int posX, int posY, Color tint);
 ;// Draw a Texture2D
 (drl DrawTexture (_fun _Texture2D _int _int _Color -> _void))
@@ -765,7 +765,7 @@
 (drl UnloadFont (_fun _Font -> _void))
 
 ;Text drawing functions
-	
+    
 ;void DrawFPS(int posX, int posY);
 ;// Shows current FPS
 (drl DrawFPS (_fun _int _int -> _void ))
