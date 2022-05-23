@@ -1,3 +1,8 @@
+NOTE
+====
+
+These are partial bindings for an old raylib version. Anyone starting a new project should look at https://github.com/eutro/racket-raylib instead.
+
 racket-raylib-2d
 ================
 Racket bindings for 2D graphics functionality part of Raylib library v2.5 (https://github.com/raysan5/raylib).
